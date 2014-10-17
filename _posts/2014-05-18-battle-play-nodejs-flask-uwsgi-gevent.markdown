@@ -183,26 +183,29 @@ ulimit -n 100000
 ###On Server VM: install:
 Install git: [here](https://help.github.com/articles/set-up-git)
 
-Clone git repo: `git clone https://github.com/heichwald/benchmark_web_frameworks`
-
-Python pip: `sudo apt-get install python-pip`
-
-Python virtualenv: `sudo pip install virtualenv`
-
-Python frameworks: 
 {% highlight bash %}
+#Clone git repo:
+git clone https://github.com/heichwald/benchmark_web_frameworks
+#Python pip: 
+sudo apt-get install python-pip
+#Python virtualenv: 
+sudo pip install virtualenv
+#Python frameworks: 
 sudo apt-get install build-essential python python-dev
 sudo pip install uwsgi
 sudo pip install gunicorn
 sudo pip install gevent
 sudo pip install tornado
-{% endhighlight %}
-Java: `sudo apt-get install openjdk-7-jdk`
 
-Play: `wget http://downloads.typesafe.com/play/2.2.3/play-2.2.3.zip` and unzip it. Then create symlink. `sudo ln -s ~/play-2.2.3/play /usr/bin/play`
+#Java:
+sudo apt-get install openjdk-7-jdk
 
-Node.js: 
-{% highlight bash %}
+#Play:
+wget http://downloads.typesafe.com/play/2.2.3/play-2.2.3.zip
+#unzip it. Then create symlink. 
+sudo ln -s ~/play-2.2.3/play /usr/bin/play
+
+#Node.js: 
 sudo apt-get install nodejs
 sudo ln -s /usr/bin/nodejs /usr/bin/node`
 sudo apt-get install npm
@@ -238,6 +241,8 @@ To see this behavior explicitly, you can test the /sleep endpoint. by sleeping 1
     Requests/sec:      1.00
     Transfer/sec:      77.67B
 
+---
+
 ###We run 2 clients but the throughput is still the same  
 
     Running 5s test @ http://192.168.0.12:5000/sleep
@@ -249,6 +254,8 @@ To see this behavior explicitly, you can test the /sleep endpoint. by sleeping 1
     Socket errors: connect 0, read 4, write 0, timeout 1
     Requests/sec:      1.00
     Transfer/sec:      77.68B
+
+---
 
 ###Now if we run 2 threads:
 {% highlight bash %}
@@ -293,8 +300,9 @@ Indeed each additional concurrent request will result in a representation of the
 
 Uncomment the following line in `app.py`  
 
-
-`from gevent import monkey; monkey.patch_all()`
+{% highlight bash %}
+from gevent import monkey; monkey.patch_all()
+{% endhighlight %}
 
 And increase the number of connections in the pool to 500.  
 If you plan to support 1000 concurrent users and you would run 4 processes, you may lower the connection pool in each client to 250.  
@@ -321,30 +329,40 @@ Not that usually they advice to run python frameworks with 2*nbCpu+1 processes, 
 
 ##Test Node
 
-Install dependencies: `npm install`  
-Node is easy to start: `node app`
-
+{% highlight bash %}
+#Install dependencies:
+npm install  
+#Node is easy to start
+node app
+{% endhighlight %}
 Node, as python runs 1 thread in 1 process, so we use cluster module which will pre-fork nbCpu processes for us. Cluster module is defined in the code of the application. Same remarks for pool size as python apply.
 
 ##Test Tornado
 The idea behind Tornado is the same as with Node. It does not run under uwsgi, as uwsgi does not support async calls.  
-Start with: `python app.py`
+{% highlight bash %}
+python app.py
+{% endhighlight %}
 
 ##Test Play
-Play starts in prd mode with: `play start`  
+{% highlight bash %}
+play start  
+{% endhighlight %}
 It will download required dependencies. Play starts one process and uses nbCpu threads to handle requests.
 
 ##Client
 
 Install wrk: [here](https://github.com/wg/wrk)
 git clone or download the zip.
+{% highlight bash %}
+#Install dependencies :
+sudo apt-get install libssl-dev 
+#Compile: 
+make
 
-Install dependencies : `sudo apt-get install libssl-dev`  
-Compile: `make`
-
-To test 200 concurrent connections for 30 sec, start with:  
-`./wrk -t1 -c200 -d30s -http://192.168.0.12/mongo`  
-We do not need more than 1 thread here.
+#To test 200 concurrent connections for 30 sec, start with:  
+./wrk -t1 -c200 -d30s -http://192.168.0.12/mongo  
+#We do not need more than 1 thread here.
+{% endhighlight %}
 
 ##Results
 
@@ -461,6 +479,8 @@ Gunicorn is a better choice than uwsgi.
 	Requests/sec:   2891.78
 	Transfer/sec:    773.78KB
 
+---
+
 ####1000 clients/concurrent requests:
 
 	Play:
@@ -531,6 +551,8 @@ Gunicorn is a better choice than uwsgi.
 	77651 requests in 30.02s, 20.29MB read
 	Requests/sec:   2586.83
 	Transfer/sec:    692.18KB
+
+---
 
 ####5000 clients/concurrent requests:
 
@@ -646,6 +668,7 @@ Gunicorn is a better choice than uwsgi.
 	Requests/sec:   2061.52
 	Transfer/sec:    551.62KB
 
+---
 
 ###Big document
 
@@ -720,7 +743,7 @@ Gunicorn is a better choice than uwsgi.
 	Requests/sec:    842.10
 	Transfer/sec:      5.23MB
 
-
+---
 
 ####1000 clients/concurrent requests:
 

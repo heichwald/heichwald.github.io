@@ -9,7 +9,6 @@ thumbnail: http://3.bp.blogspot.com/-JAXomb2kzyU/U25xe7cLIzI/AAAAAAAABRQ/kSgA3tL
 blogger_id: tag:blogger.com,1999:blog-5235607229457101085.post-2492342434141378669
 blogger_orig_url: http://hervedev.blogspot.com/2014/05/juniper-network-connect-on-linux-ubuntu.html
 ---
-#Juniper network connect on Linux Ubuntu 64 Bits Ubuntu 14.04 LTS Trusty Tahr
 **This is a step by step guide with clear explanations and screen shots to explain the set-up of Juniper network connect on Ubuntu 64 bits -tested on 14.04-**
 
 Ubuntu is pretty straightforward when it comes to connecting to a regular vpn server with a clear and easy menu in the right of the main Ubuntu toolbar.
@@ -24,8 +23,9 @@ The following guide starts from a fresh Ubuntu install, though it is not require
 ![No java installed](http://3.bp.blogspot.com/-JAXomb2kzyU/U25xe7cLIzI/AAAAAAAABRQ/kSgA3tLD4_s/s1600/java_version.jpg)
 
 As we use Ubuntu 64 bits, we will first install Java7 64 bits as well as plugins for your browsers (Chrome, Firefox)  
-`tester@tester-VirtualBox:~$ sudo apt-get install openjdk-7-jdk icedtea-7-plugin`
-
+{% highlight bash %}
+tester@tester-VirtualBox:~$ sudo apt-get install openjdk-7-jdk icedtea-7-plugin
+{% endhighlight %}
 ![Install JDK7](http://3.bp.blogspot.com/-42Ll58AVG2w/U25yrG5nrbI/AAAAAAAABRc/3VPT1z83Cak/s1600/install_java.jpg)
 
 Now check that you have correctly installed a java 64 bits version:  
@@ -34,13 +34,11 @@ tester@tester-VirtualBox:~$ java -version
 java version "1.7.0_55"
 OpenJDK Runtime Environment (IcedTea 2.4.7) (7u55-2.4.7-1ubuntu1)
 OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
-{% endhighlight %}
 
-Juniper needs a Java 32 bits version to run:  
-`tester@tester-VirtualBox:~$ sudo apt-get install openjdk-7-jdk:i386`  
+#Juniper needs a Java 32 bits version to run:  
+tester@tester-VirtualBox:~$ sudo apt-get install openjdk-7-jdk:i386
 
-Check all your installed versions: 
-{% highlight bash %}
+#Check all your installed versions: 
 tester@tester-VirtualBox:~$ update-java-alternatives -l 
 java-1.7.0-openjdk-amd64 1071 /usr/lib/jvm/java-1.7.0-openjdk-amd64
 java-1.7.0-openjdk-i386 1071 /usr/lib/jvm/java-1.7.0-openjdk-i386
@@ -69,21 +67,18 @@ Click on the lock -I use firefox but Chrome as also certificates option in the s
 **Be sure to select the certificate at the vpn url level (not at the root of the tree) and export it as a .der**
 
 ##Additional dependencies
-Install 32 bits libs:  
-`tester@tester-VirtualBox:~$ sudo apt-get install libc6-i386 lib32z1 lib32nss-mdns` 
-
-Install perl dependencies   
-`tester@tester-VirtualBox:~$ sudo apt-get install libgtk2-perl libwww-perl`
-
-Download madscientist script:
 {% highlight bash %}
+#Install 32 bits libs:  
+tester@tester-VirtualBox:~$ sudo apt-get install libc6-i386 lib32z1 lib32nss-mdns
+#Install perl dependencies   
+tester@tester-VirtualBox:~$ sudo apt-get install libgtk2-perl libwww-perl
+#Download madscientist script:
 tester@tester-VirtualBox:~$ wget -q -O /tmp/msjnc https://raw.github.com/madscientist/msjnc/master/msjnc 
 tester@tester-VirtualBox:~$ chmod 755 /tmp/msjnc
 tester@tester-VirtualBox:~$ sudo cp /tmp/msjnc /usr/bin
+#Executes the script:
+tester@tester-VirtualBox:~$ msjnc
 {% endhighlight %}
-
-Executes the script:
-`tester@tester-VirtualBox:~$ msjnc`
 >it is not required for you to read it: http://mad-scientist.us/juniper.html
 
 ##Find realm type
