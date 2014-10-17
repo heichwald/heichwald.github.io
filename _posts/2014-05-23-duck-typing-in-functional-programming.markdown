@@ -27,7 +27,9 @@ The issue with this approach is that sometimes you get code that you do not own 
 Functional languages bring benefits of both world together. One feature which was missing in a language as Java is the possibility to treat functions a first class citizens meaning being able to pass them to other functions -the reference , not the result of the function/method computation-
 This aspect has for long being present in dynamic/scripting languages through functions and closures, yet it is not limited to them; Scala is a compiled strong typed language based on the JVM. It is mainly functional.
 
-##Java example `Test.java`
+##First simple example: the Quacker
+
+###Java example `Test.java`
 {% highlight java %}
 interface Quacker{
  void quack();
@@ -60,7 +62,7 @@ public class Test{
 }
 {% endhighlight %}
 
-##Javascript example:
+###Javascript example:
 {% highlight javascript %}
 function Duck () {
  this.quack = function() {
@@ -91,7 +93,7 @@ emitSound(new CopyCat());
 emitSound(new Human());
 {% endhighlight %}
 
-##Scala example:
+###Scala example:
 {% highlight scala %}
 First way with structural type:
 class Duck {
@@ -134,11 +136,11 @@ object DuckTyping extends App {
 }
 {% endhighlight %}
 
-#DRY code: error handling
+##DRY code: error handling
 
 I lot of times when seeing people writing code in Java, I saw code duplication like this:
 
-##Java:
+###Java:
 {% highlight java %}
 public class MyErrors{
 
@@ -171,7 +173,7 @@ public class MyErrors{
 By using a functional language it is very to easy to improve this code:
 Here the error handling is written only once.
 
-##Scala:
+###Scala:
 {% highlight scala %}
 object MyErrors extends App {
 

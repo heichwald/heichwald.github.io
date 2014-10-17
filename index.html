@@ -10,7 +10,7 @@ title: Home
 {% unless forloop.first %}</div></div>{% endunless %}
 
   <div class="bundle row gutters fadeInDown animated">
-    <h2 class="post-year col span_2">{{ post.date | date: '%Y' }}</h2>
+    <h1 class="post-year col span_2">{{ post.date | date: '%Y' }}</h1>
     <div class="posts-by-year col span_10">
 
 {% else %}
@@ -21,7 +21,7 @@ title: Home
 {% unless forloop.first %}</div></div>{% endunless %}
 
   <div class="bundle row gutters fadeInDown animated">
-    <h2 class="post-year col span_2">{{ post.date | date: '%Y' }}</h2>
+    <h1 class="post-year col span_2">{{ post.date | date: '%Y' }}</h1>
     <div class="posts-by-year col span_10">
 {% endif %}
 {% endunless %}
