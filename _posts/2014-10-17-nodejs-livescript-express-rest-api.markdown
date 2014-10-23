@@ -3,7 +3,7 @@ layout: post
 title: 'My feeling on livescript and how I used it to build a restful api'
 date: '2014-10-17'
 author: Hervé
-tags: 
+tags: 'livescript, javascript'
 ---
 ***My first experience with Node.js led to some joy but some frustration too***
 

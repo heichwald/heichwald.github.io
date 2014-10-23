@@ -1,5 +1,3 @@
-markdown: redcarpet
-highlighter: null
 permalink: /:title
 
 url:

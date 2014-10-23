@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 'LINUX: Juniper network connect on Ubuntu 64 Bits Ubuntu 14.04 LTS Trusty Tahr'
+title: 'Juniper network connect on Ubuntu 64 Bits Ubuntu 14.04 LTS Trusty Tahr'
 date: '2014-05-10T12:43:00.006-07:00'
 author: Hervé
-tags: Linux, Ubuntu
+tags: Linux, Ubuntu, Juniper, VPN
 modified_time: '2014-05-10T14:06:00.985-07:00'
 thumbnail: http://3.bp.blogspot.com/-JAXomb2kzyU/U25xe7cLIzI/AAAAAAAABRQ/kSgA3tLD4_s/s72-c/java_version.jpg
 blogger_id: tag:blogger.com,1999:blog-5235607229457101085.post-2492342434141378669

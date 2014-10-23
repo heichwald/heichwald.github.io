@@ -126,6 +126,9 @@ footer {
     &:hover { color: darken($avocado-accent-color, 20%);
 }}}
 
+.title{
+  color: steelblue;
+}
 /*----------------------------------------------------------------------------*/
 
 .highlight {
@@ -151,7 +154,6 @@ footer {
 
 .right {
   float: right;
-  margin: 0 0 20px 20px;
 }
 
 .left {
@@ -224,6 +226,10 @@ footer {
 
 .not-found h1 {
   font-size: 8rem;
+}
+
+.tags{
+  color:yellowgreen;
 }
 
 dl,

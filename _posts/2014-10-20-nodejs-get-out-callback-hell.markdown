@@ -3,7 +3,7 @@ layout: post
 title: 'How to avoid the infamous callback hell in Node.js'
 date: '2014-10-20'
 author: Hervé
-tags:
+tags: 'node, callbacks, hell, promises'
 ---
 
 #Where is the trouble coming from?

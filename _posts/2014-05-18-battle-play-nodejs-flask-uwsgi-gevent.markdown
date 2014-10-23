@@ -1,9 +1,9 @@
 ---
 layout: post
-title: ! 'FRAMEWORKS: battle: Play, Node.js, Flask, uwsgi, gevent, gunicorn, Torando and MongoDB'
+title: ! 'Battle: Play, Node.js, Flask, uwsgi, gevent, gunicorn, Torando and MongoDB'
 date: '2014-05-18T10:51:00.000-07:00'
 author: Hervé
-tags: 
+tags: 'frameworks, node, flask, play'
 modified_time: '2014-05-22T19:08:33.800-07:00'
 thumbnail: http://4.bp.blogspot.com/-pGElkYwu08o/U3jcHtZJKAI/AAAAAAAABU8/P3HzlTSvEuc/s72-c/success_small.jpg
 blogger_id: tag:blogger.com,1999:blog-5235607229457101085.post-4001799226245271511

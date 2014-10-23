@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 'LINUX: how to redirect standard output and errors to files'
+title: 'How to redirect standard output and errors to files'
 date: '2014-10-23'
-author: Hervé
-tags: 
+author: Herve
+tags: 'linux, io'
 ---
 
 > This is not the only post you will find on the internet about it, I create a personal post here more as a personal reference
