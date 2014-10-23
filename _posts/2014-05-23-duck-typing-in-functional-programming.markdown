@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Duck typing in functional programming languages and how to make you code more
+title: <bold>PROGRAMMING:</bold> duck typing in functional programming languages and how to make you code more
   DRY using Scala
 date: '2014-05-23T10:11:00.000-07:00'
 author: Hervé
