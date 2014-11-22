@@ -58,6 +58,8 @@ You won't be able to enter your password as Ubuntu does not have root password. 
 Check that the following folder exists: `~/.juniper_networks/network_connect/`
 
 ##Download https certificate
+**Not that I did not have to do this step with Linux Mint**
+
 Click on the lock -I use firefox but Chrome as also certificates option in the settings-  
 ![](http://4.bp.blogspot.com/-Esc4HYJoNKg/U2567c8VWuI/AAAAAAAABSU/AAIy71mb6DQ/s1600/https_lock.jpg)
 
@@ -89,6 +91,8 @@ It should look like:
 `<input type="hidden" name="realm" value="Users">`
  
 ##Final scripts
+**I did not have to do this step with Linux Mint as the command `msjnc` correctly opens a dialog where you can enter credentials information.**
+
 ![](http://3.bp.blogspot.com/-ydJxC6ttxFw/U26AB-4FbvI/AAAAAAAABTA/cBKidX7oqgw/s1600/start_script.jpg)
 
  **Be sure to choose the i386 java (32 bits)**
