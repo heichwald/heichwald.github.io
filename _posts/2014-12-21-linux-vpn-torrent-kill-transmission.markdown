@@ -57,7 +57,7 @@ do
                 date
         else
                 echo "PID $PID"
-                kill -s HUP $PID
+                kill -TERM $PID
                 echo "killed transmission"
                 exit
         fi
