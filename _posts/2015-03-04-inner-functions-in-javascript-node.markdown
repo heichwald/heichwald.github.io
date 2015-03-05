@@ -95,7 +95,7 @@ console.log(end-start);
 
 Functions declarations vs anonymous functions have the same time -> V8 optimizes by only compiling once the function code.
 
-*Note this is an extreme testing, not really a real life scenario*
+*Note this is an extreme testing, not really a real life scenario. You app will usually spend more time calling http services, databases, etc... It is not frequent to call so many functions in a web app to serve a request*
 
 #Scala equivalent
 
