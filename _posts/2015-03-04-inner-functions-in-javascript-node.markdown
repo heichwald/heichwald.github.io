@@ -15,7 +15,7 @@ Each test was run 5 times and the average time was taken
 
 {% highlight javascript %}
  
-//Functions declaration
+//Functions declarations
   
   //Closure  
  function foo(a, b) {
@@ -42,7 +42,7 @@ Each test was run 5 times and the average time was taken
   return a + b + c;
  }
  
-//Same with anonymous functions
+//Same with anonymous functions/functions expressions
 var foo3 = function(a,b){
   var bar = function(c) {
     return a + b + c;
@@ -92,6 +92,8 @@ console.log(end-start);
 | foo4 | 400ms   | 
 
 **Looks like inner functions/closures in this scenario are 5X->10X slower. No difference between functions declarations vs anonymous functions**
+
+Functions declarations vs anonymous functions have the same time -> V8 optimizes by only compiling once the function code.
 
 *Note this is an extreme testing, not really a real life scenario*
 
