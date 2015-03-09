@@ -60,10 +60,10 @@ var bar4 = function(a, b, c) {
 
 //Adding method to prototype
 function foo5(a,b){
-	this.bar = function(c) {
-		return a + b + c;
-	}
-	return this.bar(a);	
+  this.bar = function(c) {
+    return a + b + c;
+  }
+  return this.bar(a);	
 }
 
 console.log('Starting loop');
