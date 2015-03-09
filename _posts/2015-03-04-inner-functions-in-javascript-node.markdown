@@ -148,3 +148,52 @@ object TestInner {
 | foo2 | 600 ms |  
 
 **Performance remains the same**
+
+
+#Python equivalent
+
+CPython 2.7.6
+
+*While Scala runs on the JVM -compiled to bytecode then JIT compiler- and V8 compiles directly to assembler code using 2 compilers -a fast one and an optimzer-, Python is interpreted, so we can expect it to run much slower*
+
+{% highlight python %}
+import time
+
+current_milli_time = lambda: int(round(time.time() * 1000))
+
+#Closure  
+def foo(a, b):
+  def bar(c):
+    return a + b + c
+  return bar(3)
+
+#Inner function
+def foo2(a, b):
+  def bar(c):
+    return c + 5
+  return bar(3)
+
+#2 functions
+def foo3(a, b):
+  return bar3(a, b, 3)
+
+def bar3(a, b, c):
+  return a + b + c
+
+print 'Starting loop'
+start = current_milli_time()
+for i in range(0, 100000000):
+  foo2(i,3)
+
+print 'Ending loop'
+end = current_milli_time()
+print end - start
+{% endhighlight %}
+
+##Performance
+
+| Function  |  Exec Time  |
+|----------|:-------------|
+| foo  | 47000 ms  |
+| foo1 | 31000 ms |
+| foo2 | 32000 ms |  
