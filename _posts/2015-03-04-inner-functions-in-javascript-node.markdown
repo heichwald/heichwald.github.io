@@ -58,6 +58,13 @@ var bar4 = function(a, b, c) {
   return a + b + c;
 }
 
+//Adding method to prototype
+function foo5(a,b){
+	this.bar = function(c) {
+		return a + b + c;
+	}
+	return this.bar(a);	
+}
 
 console.log('Starting loop');
 var start = new Date().getTime();
@@ -67,6 +74,7 @@ for(i=0;i<100000000;i++){
   //foo2(i,3)
   //foo3(i,3)
   //foo4(i,3)
+  //foo5(i,3)
 }
 console.log('Ending loop');
 var end = new Date().getTime();
@@ -90,8 +98,9 @@ console.log(end-start);
 | foo2 | 400 ms  |  
 | foo3 | 3300ms  |  
 | foo4 | 400ms   | 
+| foo5 | 19000ms   | 
 
-**Looks like inner functions/closures in this scenario are 5X->10X slower. No difference between functions declarations vs anonymous functions**
+**Looks like inner functions/closures in this scenario are 5X->10X slower. No difference between functions declarations vs anonymous functions. Modifying the prototype has a dramatic cost**
 
 Functions declarations vs anonymous functions have the same time -> V8 optimizes by only compiling once the function code.
 
