@@ -168,16 +168,16 @@ def foo(a, b):
   return bar(3)
 
 #Inner function
-def foo2(a, b):
+def foo1(a, b):
   def bar(c):
     return c + 5
   return bar(3)
 
 #2 functions
-def foo3(a, b):
-  return bar3(a, b, 3)
+def foo2(a, b):
+  return bar2(a, b, 3)
 
-def bar3(a, b, c):
+def bar2(a, b, c):
   return a + b + c
 
 print 'Starting loop'
