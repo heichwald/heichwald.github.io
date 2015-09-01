@@ -58,7 +58,6 @@ var bar4 = function(a, b, c) {
   return a + b + c;
 }
 
-//Adding method to prototype
 function foo5(a,b){
   this.bar = function(c) {
     return a + b + c;
@@ -100,7 +99,7 @@ console.log(end-start);
 | foo4 | 400ms   | 
 | foo5 | 19000ms   | 
 
-**Looks like inner functions/closures in this scenario are 5X->10X slower. No difference between functions declarations vs anonymous functions. Modifying the prototype has a dramatic cost**
+**Looks like inner functions/closures in this scenario are 5X->10X slower. No difference between functions declarations vs anonymous functions.**
 
 Functions declarations vs anonymous functions have the same time -> V8 optimizes by only compiling once the function code.
 
