@@ -46,17 +46,17 @@ Each test was run 5 times and the average time was taken
 var foo3 = function(a,b){
   var bar = function(c) {
     return a + b + c;
-  }
+  };
   return bar(3);  
-}
+};
 
 var foo4 = function(a, b) {
   return bar4(a, b, 3);
-}
+};
 
 var bar4 = function(a, b, c) {
   return a + b + c;
-}
+};
 
 function foo5(a,b){
   this.bar = function(c) {
@@ -65,15 +65,25 @@ function foo5(a,b){
   return this.bar(a);	
 }
 
+function foo6(a, b) {
+  this.a = a;
+  this.b = b;
+}
+
+foo6.prototype.bar = function (c) {
+  return this.a + this.b + c;
+};
+
 console.log('Starting loop');
 var start = new Date().getTime();
 for(i=0;i<100000000;i++){
-  foo(i,3)
-  //foo1(i,3)
-  //foo2(i,3)
-  //foo3(i,3)
-  //foo4(i,3)
-  //foo5(i,3)
+  foo(i,3);
+  //foo1(i,3);
+  //foo2(i,3);
+  //foo3(i,3);
+  //foo4(i,3);
+  //foo5(i,3);
+  //new foo6(i,3).bar(3);
 }
 console.log('Ending loop');
 var end = new Date().getTime();
@@ -98,6 +108,7 @@ console.log(end-start);
 | foo3 | 3300ms  |  
 | foo4 | 400ms   | 
 | foo5 | 19000ms   | 
+| foo6 | 570ms   | 
 
 **Looks like inner functions/closures in this scenario are 5X->10X slower. No difference between functions declarations vs anonymous functions.**
 
